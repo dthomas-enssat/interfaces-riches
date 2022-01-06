@@ -1,0 +1,9 @@
+# ignore all files
+/*
+
+# except require folder
+!/public
+!/src
+!.gitignore
+!package.json
+!README.md
