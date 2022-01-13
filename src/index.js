@@ -1,23 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React          from 'react';
+import ReactDOM       from 'react-dom';
+import App            from './App';
+import reportWebVital from './reportWebVitals'
 import './index.css';
 
-// import each components from main components files
-import { Welcome, Lorem } from './Component';
-
-// import data
-import { users } from './users_data';
-
-const content = users.map(user => {
-  <div>
-    <Welcome greeting={user.surname} />
-    <Lorem lorem={user.lorem} />
-  </div>
-})
-
+// render data
 ReactDOM.render(
-  <ul>
-    {content}
-  </ul>,
-  document.getElementById("root")
-)
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>,
+    document.getElementById('root')
+);
+
+reportWebVital();
