@@ -1,6 +1,6 @@
 import React, { Component }   from 'react';
 import { UserStateProvider }  from './providers/UserProvider';
-import UsersComponent         from "./components/UserComponent"
+import CharactersComponent    from "./components/CharacterComponent"
 import './App.css';
 
 class App extends Component {
@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div>
         <UserStateProvider>
-          <UsersComponent />
+          <CharactersComponent />
         </UserStateProvider>
       </div>
     );

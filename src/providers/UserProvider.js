@@ -1,10 +1,10 @@
-import React, { useContext }  from "react"
+import React, { useContext, useState }  from "react"
 import { characters }              from "../db/characters_data"
 
 const UserStateContext = React.createContext();
 
 export function UserStateProvider({ children }) {
-    const items = characters
+    const [items] = useState(characters)
 
     return (
         <UserStateContext.Provider

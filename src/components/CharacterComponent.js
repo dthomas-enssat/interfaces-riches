@@ -2,27 +2,31 @@ import WelcomeComponent from './WelcomeComponent';
 import LoremComponent   from './LoremComponent';
 import { useUserState } from '../providers/UserProvider';
 
-function UserComponent(props) {
+function CharacterComponent(props) {
     return (
-        <ul>
+        <ul className='character-item'>
             <WelcomeComponent greeting={props.surname} />
             <LoremComponent lorem={props.resume} />
         </ul>
     )
 }
 
-function UsersComponent() {
+function CharactersComponent() {
     const { items } = useUserState()
 
     const listItem = items.map(item => {
-        return <UserComponent key={item.surname+item.name} surname={item.surname} resume={item.resume} />
+        return <CharacterComponent 
+            key={item.surname+item.name} 
+            surname={item.surname} 
+            resume={item.resume} 
+        />
     })
 
     return (
-        <div>
+        <div id='characters-list'>
             { listItem }
         </div>
     )
 }
 
-export default UsersComponent;
+export default CharactersComponent;
